@@ -4,4 +4,3 @@ COPY . .
 RUN apt-get update && apt-get install -y redis-server
 RUN npm install; chmod +x /app/startup_script_test.sh
 CMD ["/app/startup_script_test.sh"]
-
