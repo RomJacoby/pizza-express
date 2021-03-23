@@ -4,7 +4,7 @@ docker run --rm --name test_container -v /root/bigid/pizza-express/exit_code:/ap
 if grep -q 0 exit_code; then
   echo -e "\nAll tests completed successfully! Building main image...\n"
   docker build -q -t main_image .
-  echo -e "\nRunning docker image and checking it's service status code\n"
+  echo -e "\nRunning docker image and checking its service status code\n"
   docker run --rm --name main_container -d -p 8081:3000 main_image
   sleep 5
   EXIT_CODE=`curl -o /dev/null -s -w "%{http_code}\n" localhost:8081`
